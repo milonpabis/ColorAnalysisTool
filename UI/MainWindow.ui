@@ -1,0 +1,988 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>800</width>
+    <height>600</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>800</width>
+    <height>600</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(255, 244, 251);</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="minimumSize">
+    <size>
+     <width>800</width>
+     <height>600</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>800</width>
+     <height>600</height>
+    </size>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QGroupBox" name="groupBox">
+      <property name="minimumSize">
+       <size>
+        <width>700</width>
+        <height>550</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>550</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>Comic Sans MS</family>
+        <pointsize>18</pointsize>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 233, 252);</string>
+      </property>
+      <property name="title">
+       <string>RESULTS</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignHCenter|Qt::AlignTop</set>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item>
+        <widget class="QFrame" name="frame">
+         <property name="maximumSize">
+          <size>
+           <width>150</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout">
+          <item>
+           <widget class="QFrame" name="frame_6">
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout_6">
+             <property name="topMargin">
+              <number>34</number>
+             </property>
+             <item>
+              <widget class="QLabel" name="l_first_hash">
+               <property name="maximumSize">
+                <size>
+                 <width>100</width>
+                 <height>110</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Lato Semibold</family>
+                 <pointsize>28</pointsize>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0.864, stop:0 rgba(230, 187, 255, 255), stop:0.883333 rgba(139, 69, 200, 255));
+color: rgb(244, 210, 255);
+border-radius: 10px;</string>
+               </property>
+               <property name="frameShape">
+                <enum>QFrame::WinPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Raised</enum>
+               </property>
+               <property name="text">
+                <string>#1</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignBottom|Qt::AlignHCenter</set>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QFrame" name="frame_7">
+            <property name="maximumSize">
+             <size>
+              <width>140</width>
+              <height>150</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0.864, stop:0 rgba(230, 187, 255, 255), stop:0.883333 rgba(139, 69, 200, 255));
+border-radius: 10px;</string>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::WinPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout_8">
+             <item>
+              <widget class="QLabel" name="l_first_color">
+               <property name="minimumSize">
+                <size>
+                 <width>100</width>
+                 <height>100</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>100</width>
+                 <height>100</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">background-color: rgb(255, 0, 255);
+border: 2px solid black;
+border-radius: 10px;
+</string>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QFrame" name="frame_8">
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout_13">
+             <property name="bottomMargin">
+              <number>34</number>
+             </property>
+             <item>
+              <widget class="QLabel" name="l_first_hex">
+               <property name="maximumSize">
+                <size>
+                 <width>100</width>
+                 <height>110</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Lato Semibold</family>
+                 <pointsize>16</pointsize>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0.864, stop:0 rgba(139, 69, 200, 255), stop:0.883333 rgba(230, 187, 255, 255));
+color: rgb(244, 210, 255);
+border-radius: 10px;
+</string>
+               </property>
+               <property name="frameShape">
+                <enum>QFrame::WinPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Raised</enum>
+               </property>
+               <property name="text">
+                <string>#000000</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignHCenter|Qt::AlignTop</set>
+               </property>
+               <property name="margin">
+                <number>5</number>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QFrame" name="frame_2">
+         <property name="maximumSize">
+          <size>
+           <width>135</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <item>
+           <widget class="QFrame" name="frame_9">
+            <property name="maximumSize">
+             <size>
+              <width>125</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout_7">
+             <property name="topMargin">
+              <number>56</number>
+             </property>
+             <item>
+              <widget class="QLabel" name="l_second_hash">
+               <property name="minimumSize">
+                <size>
+                 <width>80</width>
+                 <height>90</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>85</width>
+                 <height>95</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Lato Semibold</family>
+                 <pointsize>24</pointsize>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0.864, stop:0 rgba(230, 187, 255, 255), stop:0.883333 rgba(139, 69, 200, 255));
+color: rgb(244, 210, 255);
+border-radius: 10px;</string>
+               </property>
+               <property name="frameShape">
+                <enum>QFrame::WinPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Raised</enum>
+               </property>
+               <property name="text">
+                <string>#2</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignBottom|Qt::AlignHCenter</set>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QFrame" name="frame_10">
+            <property name="maximumSize">
+             <size>
+              <width>125</width>
+              <height>135</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0.864, stop:0 rgba(230, 187, 255, 255), stop:0.883333 rgba(139, 69, 200, 255));
+border-radius: 10px;</string>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::WinPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout_9">
+             <item>
+              <widget class="QLabel" name="l_second_color">
+               <property name="minimumSize">
+                <size>
+                 <width>90</width>
+                 <height>90</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>90</width>
+                 <height>90</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">background-color: rgb(255, 0, 255);
+border: 2px solid black;
+border-radius: 10px;
+</string>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QFrame" name="frame_11">
+            <property name="maximumSize">
+             <size>
+              <width>125</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout_14">
+             <property name="bottomMargin">
+              <number>54</number>
+             </property>
+             <item>
+              <widget class="QLabel" name="l_second_hex">
+               <property name="maximumSize">
+                <size>
+                 <width>85</width>
+                 <height>95</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Lato Semibold</family>
+                 <pointsize>14</pointsize>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0.864, stop:0 rgba(139, 69, 200, 255), stop:0.883333 rgba(230, 187, 255, 255));
+color: rgb(244, 210, 255);
+border-radius: 10px;
+</string>
+               </property>
+               <property name="frameShape">
+                <enum>QFrame::WinPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Raised</enum>
+               </property>
+               <property name="text">
+                <string>#000000</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignHCenter|Qt::AlignTop</set>
+               </property>
+               <property name="margin">
+                <number>5</number>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QFrame" name="frame_3">
+         <property name="maximumSize">
+          <size>
+           <width>120</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_3">
+          <item>
+           <widget class="QFrame" name="frame_12">
+            <property name="maximumSize">
+             <size>
+              <width>110</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout_5">
+             <property name="topMargin">
+              <number>78</number>
+             </property>
+             <item>
+              <widget class="QLabel" name="l_third_hash">
+               <property name="maximumSize">
+                <size>
+                 <width>70</width>
+                 <height>80</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Lato Semibold</family>
+                 <pointsize>20</pointsize>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0.864, stop:0 rgba(230, 187, 255, 255), stop:0.883333 rgba(139, 69, 200, 255));
+color: rgb(244, 210, 255);
+border-radius: 10px;</string>
+               </property>
+               <property name="frameShape">
+                <enum>QFrame::WinPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Raised</enum>
+               </property>
+               <property name="text">
+                <string>#3</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignBottom|Qt::AlignHCenter</set>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QFrame" name="frame_13">
+            <property name="maximumSize">
+             <size>
+              <width>110</width>
+              <height>120</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0.864, stop:0 rgba(230, 187, 255, 255), stop:0.883333 rgba(139, 69, 200, 255));
+border-radius: 10px;</string>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::WinPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout_10">
+             <item>
+              <widget class="QLabel" name="l_third_color">
+               <property name="minimumSize">
+                <size>
+                 <width>80</width>
+                 <height>80</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>80</width>
+                 <height>80</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">background-color: rgb(255, 0, 255);
+border: 2px solid black;
+border-radius: 10px;
+</string>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QFrame" name="frame_14">
+            <property name="maximumSize">
+             <size>
+              <width>110</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout_15">
+             <property name="bottomMargin">
+              <number>77</number>
+             </property>
+             <item>
+              <widget class="QLabel" name="l_third_hex">
+               <property name="maximumSize">
+                <size>
+                 <width>70</width>
+                 <height>80</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Lato Semibold</family>
+                 <pointsize>11</pointsize>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0.864, stop:0 rgba(139, 69, 200, 255), stop:0.883333 rgba(230, 187, 255, 255));
+color: rgb(244, 210, 255);
+border-radius: 10px;
+</string>
+               </property>
+               <property name="frameShape">
+                <enum>QFrame::WinPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Raised</enum>
+               </property>
+               <property name="text">
+                <string>#000000</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignHCenter|Qt::AlignTop</set>
+               </property>
+               <property name="margin">
+                <number>5</number>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QFrame" name="frame_4">
+         <property name="maximumSize">
+          <size>
+           <width>105</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_4">
+          <item>
+           <widget class="QFrame" name="frame_15">
+            <property name="maximumSize">
+             <size>
+              <width>95</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout_4">
+             <property name="topMargin">
+              <number>101</number>
+             </property>
+             <item>
+              <widget class="QLabel" name="l_fourth_hash">
+               <property name="maximumSize">
+                <size>
+                 <width>55</width>
+                 <height>65</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Lato Semibold</family>
+                 <pointsize>16</pointsize>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0.864, stop:0 rgba(230, 187, 255, 255), stop:0.883333 rgba(139, 69, 200, 255));
+color: rgb(244, 210, 255);
+border-radius: 10px;</string>
+               </property>
+               <property name="frameShape">
+                <enum>QFrame::WinPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Raised</enum>
+               </property>
+               <property name="text">
+                <string>#4</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignBottom|Qt::AlignHCenter</set>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QFrame" name="frame_16">
+            <property name="maximumSize">
+             <size>
+              <width>95</width>
+              <height>105</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0.864, stop:0 rgba(230, 187, 255, 255), stop:0.883333 rgba(139, 69, 200, 255));
+border-radius: 10px;</string>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::WinPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout_11">
+             <item>
+              <widget class="QLabel" name="l_fourth_color">
+               <property name="minimumSize">
+                <size>
+                 <width>70</width>
+                 <height>70</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>70</width>
+                 <height>70</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">background-color: rgb(255, 0, 255);
+border: 2px solid black;
+border-radius: 10px;
+</string>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QFrame" name="frame_17">
+            <property name="maximumSize">
+             <size>
+              <width>95</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout_16">
+             <property name="bottomMargin">
+              <number>99</number>
+             </property>
+             <item>
+              <widget class="QLabel" name="l_fourth_hex">
+               <property name="maximumSize">
+                <size>
+                 <width>55</width>
+                 <height>65</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Lato Semibold</family>
+                 <pointsize>8</pointsize>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0.864, stop:0 rgba(139, 69, 200, 255), stop:0.883333 rgba(230, 187, 255, 255));
+color: rgb(244, 210, 255);
+border-radius: 10px;
+</string>
+               </property>
+               <property name="frameShape">
+                <enum>QFrame::WinPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Raised</enum>
+               </property>
+               <property name="text">
+                <string>#000000</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignHCenter|Qt::AlignTop</set>
+               </property>
+               <property name="margin">
+                <number>5</number>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QFrame" name="frame_5">
+         <property name="maximumSize">
+          <size>
+           <width>100</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_5">
+          <item>
+           <widget class="QFrame" name="frame_18">
+            <property name="maximumSize">
+             <size>
+              <width>80</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout_3">
+             <property name="topMargin">
+              <number>123</number>
+             </property>
+             <item>
+              <widget class="QLabel" name="l_fifth_hash">
+               <property name="maximumSize">
+                <size>
+                 <width>45</width>
+                 <height>50</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Lato Semibold</family>
+                 <pointsize>12</pointsize>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0.864, stop:0 rgba(230, 187, 255, 255), stop:0.883333 rgba(139, 69, 200, 255));
+color: rgb(244, 210, 255);
+border-radius: 10px;</string>
+               </property>
+               <property name="frameShape">
+                <enum>QFrame::WinPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Raised</enum>
+               </property>
+               <property name="text">
+                <string>#5</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignBottom|Qt::AlignHCenter</set>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QFrame" name="frame_19">
+            <property name="maximumSize">
+             <size>
+              <width>80</width>
+              <height>90</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0.864, stop:0 rgba(230, 187, 255, 255), stop:0.883333 rgba(139, 69, 200, 255));
+border-radius: 10px;</string>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::WinPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout_12">
+             <item>
+              <widget class="QLabel" name="l_fifth_color">
+               <property name="minimumSize">
+                <size>
+                 <width>60</width>
+                 <height>60</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>60</width>
+                 <height>60</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">background-color: rgb(255, 0, 255);
+border: 2px solid black;
+border-radius: 10px;
+</string>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QFrame" name="frame_20">
+            <property name="maximumSize">
+             <size>
+              <width>80</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout_17">
+             <property name="bottomMargin">
+              <number>122</number>
+             </property>
+             <item>
+              <widget class="QLabel" name="l_fifth_hex">
+               <property name="maximumSize">
+                <size>
+                 <width>45</width>
+                 <height>50</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Lato Semibold</family>
+                 <pointsize>6</pointsize>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0.864, stop:0 rgba(139, 69, 200, 255), stop:0.883333 rgba(230, 187, 255, 255));
+color: rgb(244, 210, 255);
+border-radius: 10px;
+</string>
+               </property>
+               <property name="frameShape">
+                <enum>QFrame::WinPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Raised</enum>
+               </property>
+               <property name="text">
+                <string>#000000</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignHCenter|Qt::AlignTop</set>
+               </property>
+               <property name="margin">
+                <number>5</number>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
