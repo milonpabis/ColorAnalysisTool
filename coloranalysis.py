@@ -20,12 +20,13 @@ class StartWindow(QWidget, Ui_Form):
 
     def analyse_button(self):
         pixmap = self.l_photo.pixmap()
+        pixmap = pixmap.scaled(QSize(100, 100))
         analyser = ThreadRun(pixmap)
         analyser.run()
         result = analyser.result
 
         self.main.show()
-        self.main.get_winners(result[0], result[50000], result[125000], result[300000], result[630000])
+        self.main.get_winners(result[0], result[1], result[2], result[3], result[4])
         self.hide()
 
 
@@ -49,31 +50,33 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.start_win.show()
         self.top_colors = []
 
-    def get_winners(self, first: QColor, second: QColor, third: QColor, fourth: QColor, fifth: QColor):
-        r1, g1, b1, _ = first.getRgb()
+    def get_winners(self, first: tuple, second: tuple, third: tuple, fourth: tuple, fifth: tuple):
+
+        r1, g1, b1, h1 = first
+        self.l_first_hex.setText(h1)
         self.l_first_color.setStyleSheet(f"background-color: rgb({r1}, {g1}, {b1});"
                                          f"border: 2px solid black;")
-        self.l_first_hex.setText(first.name())
 
-        r2, g2, b2, _ = second.getRgb()
+        r2, g2, b2, h2 = second
+        self.l_second_hex.setText(h2)
         self.l_second_color.setStyleSheet(f"background-color: rgb({r2}, {g2}, {b2});"
-                                         f"border: 2px solid black;")
-        self.l_second_hex.setText(second.name())
+                                          f"border: 2px solid black;")
 
-        r3, g3, b3, _ = third.getRgb()
+        r3, g3, b3, h3 = third
+        self.l_third_hex.setText(h3)
         self.l_third_color.setStyleSheet(f"background-color: rgb({r3}, {g3}, {b3});"
                                          f"border: 2px solid black;")
-        self.l_third_hex.setText(third.name())
 
-        r4, g4, b4, _ = fourth.getRgb()
+        r4, g4, b4, h4 = fourth
+        self.l_fourth_hex.setText(h4)
         self.l_fourth_color.setStyleSheet(f"background-color: rgb({r4}, {g4}, {b4});"
-                                         f"border: 2px solid black;")
-        self.l_fourth_hex.setText(fourth.name())
+                                          f"border: 2px solid black;")
 
-        r5, g5, b5, _ = fifth.getRgb()
+        r5, g5, b5, h5 = fifth
+        self.l_fifth_hex.setText(h5)
         self.l_fifth_color.setStyleSheet(f"background-color: rgb({r5}, {g5}, {b5});"
                                          f"border: 2px solid black;")
-        self.l_fifth_hex.setText(fifth.name())
+
 
 
 
