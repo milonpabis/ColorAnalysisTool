@@ -24,14 +24,15 @@ class StartWindow(QWidget, Ui_Form):
         analyser = ThreadRun(pixmap)
         analyser.run()
         result = analyser.result
+        print(result)
 
         self.main.show()
-        self.main.get_winners(result[0], result[1], result[2], result[3], result[4])
+        self.main.get_winners(result)
         self.hide()
 
 
     def change_photo(self):
-        image = QImage("testimage.jpg")
+        image = QImage("aaa.jpg")
         h_i, w_i = image.height(), image.width()
         w = 200 / h_i * w_i
         pixmap = QPixmap().fromImage(image)
@@ -50,32 +51,49 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.start_win.show()
         self.top_colors = []
 
-    def get_winners(self, first: tuple, second: tuple, third: tuple, fourth: tuple, fifth: tuple):
+    def get_winners(self, result: list):
 
-        r1, g1, b1, h1 = first
-        self.l_first_hex.setText(h1)
-        self.l_first_color.setStyleSheet(f"background-color: rgb({r1}, {g1}, {b1});"
-                                         f"border: 2px solid black;")
 
-        r2, g2, b2, h2 = second
-        self.l_second_hex.setText(h2)
-        self.l_second_color.setStyleSheet(f"background-color: rgb({r2}, {g2}, {b2});"
-                                          f"border: 2px solid black;")
+        try:
+            r1, g1, b1, h1 = result[0]
+            self.l_first_hex.setText(h1)
+            self.l_first_color.setStyleSheet(f"background-color: rgb({r1}, {g1}, {b1});"
+                                             f"border: 2px solid black;")
+        except IndexError:
+            pass
 
-        r3, g3, b3, h3 = third
-        self.l_third_hex.setText(h3)
-        self.l_third_color.setStyleSheet(f"background-color: rgb({r3}, {g3}, {b3});"
-                                         f"border: 2px solid black;")
+        try:
+            r2, g2, b2, h2 = result[1]
+            self.l_second_hex.setText(h2)
+            self.l_second_color.setStyleSheet(f"background-color: rgb({r2}, {g2}, {b2});"
+                                              f"border: 2px solid black;")
+        except IndexError:
+            pass
 
-        r4, g4, b4, h4 = fourth
-        self.l_fourth_hex.setText(h4)
-        self.l_fourth_color.setStyleSheet(f"background-color: rgb({r4}, {g4}, {b4});"
-                                          f"border: 2px solid black;")
+        try:
+            r3, g3, b3, h3 = result[2]
+            self.l_third_hex.setText(h3)
+            self.l_third_color.setStyleSheet(f"background-color: rgb({r3}, {g3}, {b3});"
+                                             f"border: 2px solid black;")
+        except IndexError:
+            pass
 
-        r5, g5, b5, h5 = fifth
-        self.l_fifth_hex.setText(h5)
-        self.l_fifth_color.setStyleSheet(f"background-color: rgb({r5}, {g5}, {b5});"
-                                         f"border: 2px solid black;")
+        try:
+            r4, g4, b4, h4 = result[3]
+            self.l_fourth_hex.setText(h4)
+            self.l_fourth_color.setStyleSheet(f"background-color: rgb({r4}, {g4}, {b4});"
+                                              f"border: 2px solid black;")
+        except IndexError:
+            pass
+
+        try:
+            r5, g5, b5, h5 = result[4]
+            self.l_fifth_hex.setText(h5)
+            self.l_fifth_color.setStyleSheet(f"background-color: rgb({r5}, {g5}, {b5});"
+                                             f"border: 2px solid black;")
+        except IndexError:
+            pass
+
 
 
 

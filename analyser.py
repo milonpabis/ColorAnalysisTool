@@ -3,10 +3,20 @@ from PySide6.QtGui import QIcon, QFont, QColor, QPixmap, QImage
 from PySide6.QtWidgets import QLabel
 import math
 
-DISTANCE = 100
+DISTANCE = 90
+DISTANCE_LVL1 = 10
+DISTANCE_LVL2 = 20
+DISTANCE_LVL3 = 30
+DISTANCE_LVL4 = 40
+DISTANCE_LVL5 = 50
+DISTANCE_LVL6 = 60
+DISTANCE_LVL7 = 70
+DISTANCE_LVL8 = 80
+DISTANCE_LVL9 = 90
 
-# scheme = {'counter': 0, 'colors': [{'first': QColor, 'rest': [Qcolor], 'counter': 0},
-# #                                  {'first': QColor, 'rest': [QColor], 'counter': 0}] }
+# scheme = {'counter': 0, 'colors': [{'first': (r, g, b, h), 'rest': [], 'counter': 0},
+# #                {'first': (r, g, b, h), 'rest': [{'first': (r,g,b,h), 'counter': 0},
+#                                                   {'first': (r,g,b,h), 'counter': 0}], 'counter': 0}] }
 
 
 class Analyser:
@@ -18,26 +28,19 @@ class Analyser:
         self.image = self.pixmap.toImage()
         self.colors = []
         self.groups = {'counter': 0, 'colors': []}
-        #print(self.calc_distance(QColor(235, 64, 52), QColor(135, 19, 11)))
-        #print(self.calc_distance(QColor(235, 64, 52), QColor(222, 21, 7)))
-        #print(self.calc_distance(QColor(235, 64, 52), QColor(30, 194, 21)))
-        #print(self.calc_distance(QColor(235, 64, 52), QColor(150, 20, 59)))
-        #print(self.calc_distance(QColor(235, 64, 52), QColor(150, 20, 137)))
-        #print(self.calc_distance(QColor(150, 20, 59), QColor(150, 20, 137)))
-        #print(self.calc_distance(QColor(255, 255, 255), QColor(0, 0, 0)))
 
 
 
 
-    def retrieve_colors(self):
+    def retrieve_colors(self):          # change not to QColor
         for i in range(self.original_width):
             for j in range(self.original_height):
                 color = self.image.pixelColor(QPoint(i, j))
                 self.compare_colors(color)
-            print(i, j)
+            #print(i, j)
         print(self.groups)
-        return self.find_top()
-    # ->>>   change image size to make it work faster ( 100 x 100 )
+        return self.find_top_interior()
+
 
 
     def compare_colors(self, color: QColor):
@@ -48,14 +51,69 @@ class Analyser:
             r2, g2, b2, _ = self.groups['colors'][i]['first']
             distance = self.calc_distance((r1, g1, b1), (r2, g2, b2))
             if distance <= DISTANCE:
-                #self.groups['colors'][i]['rest'].append((r1, g1, b1, h1))
+                self.groups['colors'][i]['rest'].append((r1, g1, b1, h1))
                 self.groups['colors'][i]['counter'] += 1
                 gate = True
                 break
+
         if not gate:
             self.groups['colors'].append({'first': (r1, g1, b1, h1), 'rest': []})
             self.groups['colors'][self.groups['counter']]['counter'] = 1
             self.groups["counter"] += 1
+
+
+    def find_top_interior(self):
+        top_5 = []
+        for i in self.groups['colors']:
+            temp_tops = [{'first': None, 'counter': 0} for _ in range(10)]
+            try:
+                first = i['rest'][0]
+            except IndexError:
+                continue
+            r1, g1, b1, h1 = first
+            for color in i['rest'][1:]:
+                r2, g2, b2, h2 = color
+                distance = self.calc_distance((r1, g1, b1), (r2, g2, b2))
+                if distance <= DISTANCE_LVL1:
+                    temp_tops[0]['first'] = color
+                    temp_tops[0]['counter'] += 1
+                elif distance <= DISTANCE_LVL2:
+                    temp_tops[1]['first'] = color
+                    temp_tops[1]['counter'] += 1
+                elif distance <= DISTANCE_LVL3:
+                    temp_tops[2]['first'] = color
+                    temp_tops[2]['counter'] += 1
+                elif distance <= DISTANCE_LVL4:
+                    temp_tops[3]['first'] = color
+                    temp_tops[3]['counter'] += 1
+                elif distance <= DISTANCE_LVL5:
+                    temp_tops[4]['first'] = color
+                    temp_tops[4]['counter'] += 1
+                elif distance <= DISTANCE_LVL6:
+                    temp_tops[5]['first'] = color
+                    temp_tops[5]['counter'] += 1
+                elif distance <= DISTANCE_LVL7:
+                    temp_tops[6]['first'] = color
+                    temp_tops[6]['counter'] += 1
+                elif distance <= DISTANCE_LVL8:
+                    temp_tops[7]['first'] = color
+                    temp_tops[7]['counter'] += 1
+                elif distance <= DISTANCE_LVL9:
+                    temp_tops[8]['first'] = color
+                    temp_tops[8]['counter'] += 1
+                else:
+                    temp_tops[9]['first'] = color
+                    temp_tops[9]['counter'] += 1
+
+            temp_tops = self.sort_interior(temp_tops, 1)
+            top_5.append(temp_tops[0])
+        top_5 = self.find_top(top_5, 5)
+        print("TOP5:")
+        print(top_5)
+        return top_5
+
+
+
 
 
 
@@ -65,9 +123,16 @@ class Analyser:
         return math.sqrt((r2 - r1)**2 + (g2 - g1)**2 + (b2 - b1)**2)
 
 
-    def find_top(self):
-        result = sorted(self.groups['colors'], key=lambda x: x['counter'], reverse=True)
-        to_return = [item['first'] for item in result[:5]]
+    def find_top(self, data, top):
+
+        result = sorted(data, key=lambda x: x['counter'], reverse=True)
+        to_return = [item['first'] for item in result[:top]]
+        return to_return
+
+    def sort_interior(self, data, top):
+
+        result = sorted(data, key=lambda x: x['counter'], reverse=True)
+        to_return = [item for item in result[:top]]
 
         return to_return
 
