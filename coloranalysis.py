@@ -1,5 +1,5 @@
 from UI.StartWindow import Ui_Form
-from PySide6.QtWidgets import QApplication, QMainWindow, QWidget, QDialog
+from PySide6.QtWidgets import QApplication, QMainWindow, QWidget, QDialog, QFileDialog
 from PySide6.QtCore import Qt, QSize, Signal, QTimer
 from PySide6.QtGui import QIcon, QFont, QColor, QPixmap, QImage
 from UI.MainWindow import Ui_MainWindow
@@ -16,7 +16,7 @@ class StartWindow(QWidget, Ui_Form):
         self.setWindowTitle("CAT")
         self.bt_start.pressed.connect(self.analyse_button)
         self.main = main
-        self.change_photo()
+
 
     def analyse_button(self):
         pixmap = self.l_photo.pixmap()
@@ -31,14 +31,24 @@ class StartWindow(QWidget, Ui_Form):
         self.hide()
 
 
-    def change_photo(self):
-        image = QImage("aaa.jpg")
+    def change_photo(self, path):
+        image = QImage(path)
         h_i, w_i = image.height(), image.width()
         w = 200 / h_i * w_i
         pixmap = QPixmap().fromImage(image)
         self.l_photo.setPixmap(pixmap)
         self.l_photo.setFixedSize(QSize(w, 200))
         self.l_photo.setScaledContents(True)
+
+
+
+    def mousePressEvent(self, event) -> None:
+        pos = event.position()
+        x, y = pos.x(), pos.y()
+        if (x > 105 and x < 494) and (y > 86 and y < 314):
+            path = QFileDialog.getOpenFileName(self)[0]
+            if path:
+                self.change_photo(path)
 
 
 

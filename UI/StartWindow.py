@@ -101,7 +101,7 @@ class Ui_Form(object):
         self.l_photo.setFrameShadow(QFrame.Raised)
         self.l_photo.setLineWidth(5)
         self.l_photo.setMidLineWidth(0)
-        self.l_photo.setPixmap(QPixmap(u"images/insert_image.png"))
+        self.l_photo.setPixmap(QPixmap(u"UI/images/insert_image.png"))
         self.l_photo.setScaledContents(False)
         self.l_photo.setAlignment(Qt.AlignCenter)
         self.l_photo.setWordWrap(False)
