@@ -35,6 +35,8 @@ class StartWindow(QWidget, Ui_Form):
         image = QImage(path)
         h_i, w_i = image.height(), image.width()
         w = 200 / h_i * w_i
+        if w > 350:
+            w = 350
         pixmap = QPixmap().fromImage(image)
         self.l_photo.setPixmap(pixmap)
         self.l_photo.setFixedSize(QSize(w, 200))
@@ -45,7 +47,7 @@ class StartWindow(QWidget, Ui_Form):
     def mousePressEvent(self, event) -> None:
         pos = event.position()
         x, y = pos.x(), pos.y()
-        if (x > 105 and x < 494) and (y > 86 and y < 314):
+        if (x > 105 and x < 494) and (y > 86 and y < 314):      # image inserting borders
             path = QFileDialog.getOpenFileName(self)[0]
             if path:
                 self.change_photo(path)
@@ -57,6 +59,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
+        self.setWindowTitle("Results")
         self.start_win = StartWindow(self)
         self.start_win.show()
         self.top_colors = []
